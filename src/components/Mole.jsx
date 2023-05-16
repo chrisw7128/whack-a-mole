@@ -1,7 +1,7 @@
 import mole from "../embedded/mole.png";
 import { useEffect } from "react";
 
-export default function Mole({ setIsShowing }) {
+export default function Mole({ setIsShowing, onMoleClick }) {
   useEffect(() => {
     let randMillies = Math.ceil(Math.random() * 5000 + 1000);
     let timer = setTimeout(() => {
@@ -12,7 +12,7 @@ export default function Mole({ setIsShowing }) {
   }, []);
   return (
     <div>
-      <img style={{ width: "30vw" }} src={mole} />
+      <img style={{ width: "30vw" }} src={mole} onClick={onMoleClick} />
     </div>
   );
 }
